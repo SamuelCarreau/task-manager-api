@@ -80,8 +80,6 @@ router.delete('/users/me', auth, async (req, res) => {
         sendCancelationEmail(req.user.email, req.user.name)
         res.send(req.user)
     } catch (e) {
-        e.name === 'CastError' ? 
-        res.status(400).send({error: 'Invalid id'}) :
         res.status(500).send()
     }
 })
